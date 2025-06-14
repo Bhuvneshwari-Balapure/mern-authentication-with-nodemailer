@@ -7,7 +7,9 @@ router.use("/changePassword", CheckUserAuth);
 router.use("/loggeduser", CheckUserAuth);
 // public route (register , login)
 router.post("/register", authCtrl.userRegistration);
-router.get("/login", authCtrl.userLogin);
+router.post("/login", authCtrl.userLogin);
+router.post("/send-password-reset-email", authCtrl.SendUserPasswordResetEmail);
+router.post("/reset-password/:id/:token", authCtrl.UserPassReset);
 
 // protected route (access dashboard and authorization)
 router.post("/changePassword", authCtrl.ChangeUserPassword);
