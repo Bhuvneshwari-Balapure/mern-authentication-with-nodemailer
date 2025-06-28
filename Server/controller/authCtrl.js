@@ -6,6 +6,7 @@ const transporter = require("../Config/emailConfig");
 const userRegistration = async (req, res) => {
   const { name, email, password, password_confirmation, termCondition } =
     req.body;
+  console.log("register : ", req.body);
   const user = await User.findOne({ email: email });
   if (user) {
     res.send({ status: "failed", message: "Email Already Registered" });

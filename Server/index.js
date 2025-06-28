@@ -10,7 +10,7 @@ const PORT = process.env.PORT;
 const DB_URL = process.env.DB_URL;
 
 // middleware
-app.use(cors({ origin: "http://localhost:3000", credentials: true })); //cors
+app.use(cors({ origin: "http://localhost:5173", credentials: true })); //cors
 app.use(express.json()); //cookieParser
 app.use(cookieParser()); //cookieParser
 
